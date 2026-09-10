@@ -1,0 +1,39 @@
+HLD:
+     ┌──────────────────────┐
+     │   Floor Controllers  │
+     │  Up / Down Requests  │
+     └──────────┬───────────┘
+                │
+                ▼
+     ┌──────────────────────┐
+     │  Elevator Controller │
+     │   / Dispatcher       │
+     └──────────┬───────────┘
+                │
+     ┌──────────┼──────────┐
+     ▼          ▼          ▼
+ Elevator 1  Elevator 2  Elevator N
+     │          │          │
+     ▼          ▼          ▼
+  Motor      Motor      Motor
+  Door       Door       Door
+  Sensors    Sensors    Sensors
+
+
+
+LLD:
+ElevatorSystem
+    |
+    +-- Elevator
+    |     +-- currentFloor
+    |     +-- direction
+    |     +-- state
+    |     +-- requestQueue
+    |
+    +-- Floor
+    |
+    +-- Button
+    |
+    +-- Door
+    |
+    +-- Scheduler
